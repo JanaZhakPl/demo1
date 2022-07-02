@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,7 @@ public class User {
 
     @OneToMany(mappedBy="theUser")
     private List<Book> books;
+
 
 
 }

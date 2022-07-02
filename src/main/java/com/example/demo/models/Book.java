@@ -35,12 +35,6 @@ public class Book {
             fetch = FetchType.LAZY)
     private User theUser;
 
-    public Book(String title, String author, String genre, String description) {
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.description = description;
-    }
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "book")
     private List<Image> images = new ArrayList<>();
 
