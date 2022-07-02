@@ -16,32 +16,27 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-//    @Column(name = "name")
-//    private String name;
     @Column(name = "originalFileName")
     private String originalFileName;
     @Column(name = "size")
     private Long size;
 
-
     @Lob
     private byte[] bytes;
 
-
-
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @JoinColumn(name = "book_id")
+    private Book book;
 
 
 
 
 
-//    public Product getProduct() {
-//        return product;
+//    public Book getBook() {
+//        return book;
 //    }
 //
-//    public void setProduct(Product product) {
-//        this.product = product;
+//    public void setBook(Book book) {
+//        this.book = book;
 //    }
 }
