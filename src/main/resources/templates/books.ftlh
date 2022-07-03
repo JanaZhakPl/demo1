@@ -4,10 +4,12 @@
     <title>MyLibraryApp</title>
 </head>
 <body>
-<h1>Books page</h1>
+<form action="/logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 <hr>
 <h3>Add new book</h3>
-<form action="/books/create" method="post" enctype="multipart/form-data">
+<form action="/book/create" method="post" enctype="multipart/form-data">
     Book Title: <input type="text" name="title"/><br><br>
     Book Author: <input type="text" name="author"/><br><br>
     Book Genre: <input type="text" name="genre"/><br><br>
@@ -23,15 +25,13 @@
 </form>
 <#list books as book>
     <div>
-        <p><b>${book.title}</b>  ${book.author} | <a href="/books/${book.id}">More information</a></p>
+        <p><b>${book.title}</b>  ${book.author} | <a href="/book/${book.id}">More information</a></p>
     </div>
 <#else>
     <h3>There is no books in the library</h3>
 </#list>
 <#--    <#if user.email??></#if>-->
-<hr />
-<form action="/logout" method="post">
-    <input type="submit" value="Logout">
-</form>
+<hr>
+
 </body>
 </html>

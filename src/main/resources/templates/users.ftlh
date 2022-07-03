@@ -4,7 +4,9 @@
     <title>MyLibraryApp</title>
 </head>
 <body>
-<h1>Users page</h1>
+<form action="/logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 <hr>
 <h4>BookShelf</h4>
 <form action="/users" method="get">
@@ -14,7 +16,7 @@
 <#list users as user>
     <div>${user.name}</div>
     <div>${user.email}</div>
-    <div>${user.phoneNumber}</div><br><br>
+    <div>${user.numberPhone}</div><br><br>
     <#else>
     <h3>There are no users</h3>
 </#list>

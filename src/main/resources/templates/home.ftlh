@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyLibraryApp</title>
+    <title>MyLibraryApp</title>
 </head>
 <body>
-<h1>Home Page</h1>
+<form action="/logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 <hr>
-<a href="/main">Main page</a>
-<br>
-<a href="/registration">Registration page</a>
+<h4>BookShelf</h4>
+<form action="/home" method="get">
+    Search by title: <input type="text" name="title"><br>
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>
