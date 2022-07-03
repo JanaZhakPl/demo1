@@ -18,7 +18,7 @@
 
 <hr>
 
-<form action="/book/delete/${book.id}" method="post">
+<form action="/books/delete/${book.id}" method="post">
     <input type="submit" value="Delete book"/>
 </form>
 </body>

@@ -1,42 +1,35 @@
 package com.example.demo.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import lombok.Setter;
 
 @Entity
 @Table(name = "images")
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Image {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "originalFileName")
-    private String originalFileName;
-    @Column(name = "size")
-    private Long size;
-
-    @Lob
-    private byte[] bytes;
-
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "book_id")
-    private Book book;
-
-
-
-
-
-//    public Book getBook() {
-//        return book;
-//    }
-//
-//    public void setBook(Book book) {
-//        this.book = book;
-//    }
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+  @Column(name = "original_file_name")
+  private String originalFileName;
+  private Long size;
+  @Lob
+  private byte[] bytes;
+  @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+  @JoinColumn(name = "book_id")
+  private Book book;
 }
